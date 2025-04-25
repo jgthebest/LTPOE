@@ -28,6 +28,7 @@ public class Cargo {
         this.funcionarios = new ArrayList<>(funcionarios);
     }
 
+    // getters
     public Long getId_cargo(){
         return id_cargo;
     }
@@ -43,6 +44,8 @@ public class Cargo {
     public List<Funcionario> getFuncionarios(){
         return funcionarios;
     }
+
+    // setters
     public void setId_cargo(Long id_cargo){
         this.id_cargo = id_cargo;
     }

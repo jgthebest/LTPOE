@@ -22,6 +22,8 @@ public class Departamento {
         this.cargos = new ArrayList<>(cargos);
     }
 
+
+    // getters
     public Long getIdDept(){
         return id_departamento;
     }
@@ -35,6 +37,7 @@ public class Departamento {
         return cargos;
     }
 
+    // setters
     public void setIdDept(Long id_departamento){
         this.id_departamento = id_departamento;
     }

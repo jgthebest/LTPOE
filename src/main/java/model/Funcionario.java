@@ -19,6 +19,7 @@ public class Funcionario {
         this.cargo = cargo;
     }
 
+    // getters
     public Long getFunc_id(){
         return func_id;
     }
@@ -28,6 +29,10 @@ public class Funcionario {
     public String getEmail(){
         return email;
     }
+    public Cargo getCargo(){
+        return cargo;
+    }
+    // setters
     public void setFunc_id(Long func_id){
         this.func_id = func_id;
     }
