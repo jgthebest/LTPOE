@@ -1,6 +1,7 @@
-package com.model;
+package com.ltpo.model;
 
-import com.model.Modelo;
+
+import com.ltpo.model.Modelo;
 import jakarta.persistence.*;
 
 @Entity
@@ -18,9 +19,17 @@ public class Automovel {
     @JoinColumn(name = "id_modelo", referencedColumnName = "id")
     private Modelo modelo;
 
+
     public Automovel(){
 
     }
+
+    public Automovel(String nome, int ano, String cor){
+        this.nome = nome;
+        this.ano = ano;
+        this.cor = cor;
+    }
+
 
 
     public Integer getId(){return id;}
@@ -40,7 +49,18 @@ public class Automovel {
     public void setCor(String cor){
         this.cor = cor;
     }
-    public void setModelo(com.model.Modelo modelo){
+    public void setModelo(Modelo modelo){
         this.modelo = modelo;
+    }
+
+    @Override
+    public String toString() {
+        return "Automovel{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", ano=" + ano +
+                ", cor='" + cor + '\'' +
+                ", modelo=" + modelo +
+                '}';
     }
 }

@@ -1,4 +1,4 @@
-package com.model;
+package com.ltpo.model;
 
 import jakarta.persistence.*;
 
@@ -6,25 +6,28 @@ import jakarta.persistence.*;
 @Table(name = "modelo")
 public class Modelo {
     @Id @GeneratedValue @Column(name = "id")
-    private int id;
+    private Integer id;
     private String nome;
     private String marca;
 
     @OneToOne(mappedBy = "modelo")
     private Automovel automovel;
 
-    public Modelo(int id, String nome, String marca){
-        this.id = id;
+    public Modelo(){
+
+    }
+
+    public Modelo(String nome, String marca){
         this.nome = nome;
         this.marca = marca;
     }
 
-    public int getId(){return id;}
+    public Integer getId(){return id;}
     public String getNome(){return nome;}
     public String marca(){return marca;}
-    public com.model.Automovel getAutomovel(){return automovel;}
+    public Automovel getAutomovel(){return automovel;}
 
-    public void setId(int id){
+    public void setId(Integer id){
         this.id = id;
     }
     public void setNome(String nome){
@@ -33,8 +36,18 @@ public class Modelo {
     public void setMarca(String marca){
         this.marca = marca;
     }
-    public void setAutomovel(com.model.Automovel automovel){
+    public void setAutomovel(Automovel automovel){
         this.automovel = automovel;
     }
 
+
+    @Override
+    public String toString() {
+        return "Modelo{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", marca='" + marca + '\'' +
+                ", automovel=" + automovel +
+                '}';
+    }
 }
