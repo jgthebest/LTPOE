@@ -2,6 +2,8 @@ package com.ltpo.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "modelo")
 public class Modelo {
@@ -10,8 +12,8 @@ public class Modelo {
     private String nome;
     private String marca;
 
-    @OneToOne(mappedBy = "modelo")
-    private Automovel automovel;
+    @OneToMany(mappedBy = "modelo", cascade = CascadeType.ALL)
+    private List<Automovel> automovel;
 
     public Modelo(){
 
@@ -25,7 +27,7 @@ public class Modelo {
     public Integer getId(){return id;}
     public String getNome(){return nome;}
     public String marca(){return marca;}
-    public Automovel getAutomovel(){return automovel;}
+    public List<Automovel> getAutomovel(){return automovel;}
 
     public void setId(Integer id){
         this.id = id;
@@ -36,7 +38,7 @@ public class Modelo {
     public void setMarca(String marca){
         this.marca = marca;
     }
-    public void setAutomovel(Automovel automovel){
+    public void setAutomovel(List<Automovel> automovel){
         this.automovel = automovel;
     }
 
@@ -47,7 +49,6 @@ public class Modelo {
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", marca='" + marca + '\'' +
-                ", automovel=" + automovel +
                 '}';
     }
 }

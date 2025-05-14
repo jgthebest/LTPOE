@@ -15,10 +15,13 @@ public class Automovel {
     private String cor;
 
 
-    @OneToOne (cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "id_modelo", referencedColumnName = "id")
     private Modelo modelo;
 
+    @ManyToOne
+    @JoinColumn(name = "id_usuario", referencedColumnName = "id")
+    private Usuario usuario;
 
     public Automovel(){
 
